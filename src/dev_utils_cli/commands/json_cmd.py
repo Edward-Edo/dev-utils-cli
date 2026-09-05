@@ -28,7 +28,7 @@ def _read_input(input_arg: str | None) -> str:
 @click.option(
     "-o",
     "--output",
-    type=click.Path("w", encoding="utf-8", dir_okay=False),
+    type=click.Path(dir_okay=False),
     default=None,
     help="Escribe el resultado en un archivo.",
 )
