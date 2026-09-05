@@ -1,0 +1,60 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dev-utils-cli"
+version = "1.0.0"
+description = "Una CLI rápida y elegante con utilidades esenciales para desarrolladores."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Edward Itriago", email = "edwarditriagosub@gmail.com" }]
+requires-python = ">=3.9"
+keywords = ["cli", "developer-tools", "utility", "json", "hash", "base64", "uuid"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "click>=8.1",
+    "rich>=13.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "ruff>=0.1",
+]
+
+[project.scripts]
+devu = "dev_utils_cli.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Edward-Edo/dev-utils-cli"
+Issues = "https://github.com/Edward-Edo/dev-utils-cli/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/dev_utils_cli"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "W"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra --strict-markers"
