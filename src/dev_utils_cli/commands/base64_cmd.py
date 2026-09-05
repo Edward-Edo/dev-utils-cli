@@ -19,7 +19,14 @@ def _read_stdin_or_arg(value: str | None) -> str:
 
 
 @click.command(name="base64")
-@click.option("-e", "--encode", "mode", flag_value="encode", default=True, help="Codifica (default).")
+@click.option(
+    "-e",
+    "--encode",
+    "mode",
+    flag_value="encode",
+    default=True,
+    help="Codifica (default).",
+)
 @click.option("-d", "--decode", "mode", flag_value="decode", help="Decodifica.")
 @click.option("-i", "--input", "input_text", default=None, help="Texto de entrada.")
 def base64_cmd(mode: str, input_text: str | None) -> None:

@@ -14,7 +14,8 @@ def test_single_uuid() -> None:
     result = runner.invoke(main, ["uuid"])
     assert result.exit_code == 0
     uuid_value = result.output.strip()
-    assert re.match(r"^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$", uuid_value)
+    pattern = r"^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    assert re.match(pattern, uuid_value)
 
 
 def test_multiple_uuids() -> None:
