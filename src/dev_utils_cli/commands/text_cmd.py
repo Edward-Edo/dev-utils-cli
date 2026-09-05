@@ -11,7 +11,8 @@ CASES = ("snake", "kebab", "camel", "pascal", "upper", "lower", "title")
 
 
 def _normalize(text: str) -> list[str]:
-    parts = re.split(r"[\s_\-]+", text)
+    spaced = re.sub(r"(?<!^)(?=[A-Z])", " ", text)
+    parts = re.split(r"[\s_\-]+", spaced)
     return [p for p in parts if p]
 
 
