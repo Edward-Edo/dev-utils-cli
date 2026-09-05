@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import click
 from rich.console import Console
-from rich.panel import Panel
 from rich.table import Table
 
 from .commands import base64_cmd, hash_cmd, json_cmd, text_cmd, uuid_cmd
@@ -38,11 +37,11 @@ def info() -> None:
     console.print(table)
 
 
-main.add_command(json_cmd.json)
-main.add_command(hash_cmd.hash)
-main.add_command(base64_cmd.base64)
-main.add_command(uuid_cmd.uuid)
-main.add_command(text_cmd.text)
+main.add_command(json_cmd.json_cmd)
+main.add_command(hash_cmd.hash_cmd)
+main.add_command(base64_cmd.base64_cmd)
+main.add_command(uuid_cmd.uuid_cmd)
+main.add_command(text_cmd.text_cmd)
 
 
 if __name__ == "__main__":

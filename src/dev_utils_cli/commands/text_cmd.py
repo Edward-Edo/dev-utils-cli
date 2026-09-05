@@ -47,7 +47,7 @@ def _convert(text: str, target: str) -> str:
     required=True,
     help="Caso destino.",
 )
-def text_cmd(input_text: str | None, target: str) -> None:
+def text_cmd(input_text: str | None, target: str) -> None:  # noqa: A001
     """Convierte texto entre snake, kebab, camel, pascal, upper, lower, title."""
     if input_text is None:
         if sys.stdin.isatty():

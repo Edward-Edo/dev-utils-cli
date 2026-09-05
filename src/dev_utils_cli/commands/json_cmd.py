@@ -49,7 +49,7 @@ def json_cmd(  # noqa: A001 — nombre del comando CLI
     try:
         data = json.loads(raw)
     except json.JSONDecodeError as exc:
-        console.print(f"[bold red]✗ JSON inválido:[/] {exc.msg} (línea {exc.lineno}, col {exc.colno})")
+        console.print(f"[bold red]✗ JSON inválido:[/] {exc.msg} (línea {exc.lineno})")
         sys.exit(1)
 
     if minify:
